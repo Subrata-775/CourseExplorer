@@ -21,7 +21,7 @@ function Card({ course, likedCourse, setLikedCourse }) {
 
     }
     return (
-        <div className='w-[300px] bg-black bg-opacity-80 rounded-md overflow-hidden'>
+        <div className='w-[300px] bg-gray-800 bg-opacity-80 rounded-md overflow-hidden'>
             <div className='relative'>
                 <img className='' src={course.image.url}></img>
                 <div className='w-[40px] h-[40px] bg-white rounded-full 
@@ -35,7 +35,7 @@ function Card({ course, likedCourse, setLikedCourse }) {
                     </button>
                 </div>
             </div>
-            <div className='p-4'>
+            <div className='p-4 '>
                 <p className='text-white font-semibold text-lg leading-6'>
                     {course.title}
                 </p>

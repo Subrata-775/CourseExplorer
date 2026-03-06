@@ -7,6 +7,7 @@ import { apiUrl, filterData } from './data.js';
 import { useState, useEffect } from 'react';
 import { toast } from "react-toastify";
 import Spinner from './Components/Spinner.js';
+import Footer from './Components/Footer.js';
 
 
 function App() {
@@ -34,11 +35,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App  min-h-screen flex flex-col">
+    <div className="App  min-h-screen flex flex-col bg-gray-700">
       <div>
         <Navbar />
       </div>
-      <div className='bg-gray-700'>
+      <div className="flex-grow">
 
         <div>
           <Filter filterData={filterData}
@@ -49,6 +50,9 @@ function App() {
          flex flex-wrap justify-center items-center min-h-[50vh]'>
           {loading ? (<Spinner />) : (<MainCard courses={courses} catagory={catagory} />)}
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
 
 
