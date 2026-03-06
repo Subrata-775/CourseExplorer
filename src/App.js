@@ -1,23 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar.js';
+import Filter from './Components/Filter.js';
+import MainCard from './Components/MainCard.js';
+import { apiUrl, filterData } from './data.js';
+import { useState, useEffect } from 'react';
+import { toast } from "react-toastify";
 
 function App() {
+
+  const [courses, setCourses] = useState(null);
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const res = await fetch(apiUrl);
+        const output = await res.json();
+
+        setCourses(output.data);
+
+      } catch (error) {
+        toast.error("Something Went Wrong!");
+      }
+    };
+
+    fetchData();
+
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Filter filterData={filterData} />
+      <MainCard courses={courses} />
     </div>
   );
 }
