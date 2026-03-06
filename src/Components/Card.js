@@ -25,7 +25,7 @@ function Card({ course, likedCourse, setLikedCourse }) {
             <div className='relative'>
                 <img className='' src={course.image.url}></img>
                 <div className='w-[40px] h-[40px] bg-white rounded-full 
-                absolute right-2 bottom-2 grid place-items-center'>
+                absolute right-2 bottom-[-12px] grid place-items-center'>
                     <button onClick={clickHandler}>
                         {
                             likedCourse.includes(course.id) ?
