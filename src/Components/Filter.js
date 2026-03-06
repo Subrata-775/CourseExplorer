@@ -8,7 +8,7 @@ function Filter({ filterData }) {
         <div className='filter'>
             {
                 filterData.map((data) => {
-                    return <button>
+                    return <button key={data.id}>
                         {data.title}
                     </button>
                 })

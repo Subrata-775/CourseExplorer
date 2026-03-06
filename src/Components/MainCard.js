@@ -16,7 +16,12 @@ function MainCard({ courses }) {
 
     return (
         <div>
-            <Card />
+            {
+                getcourses().map((course) => {
+                    return <Card key={course.id} course={course} />
+                })
+            }
+
         </div>
     )
 }
