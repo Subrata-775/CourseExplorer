@@ -23,8 +23,8 @@ function Card({ course, likedCourse, setLikedCourse }) {
     return (
         <div className='w-[300px] bg-gray-800 bg-opacity-80 rounded-md overflow-hidden'>
             <div className='relative'>
-                <img className='' src={course.image.url}></img>
-                <div className='w-[40px] h-[40px] bg-white rounded-full 
+                <img src={course.image} alt={course.title} />
+                <div className='w-[40px] h-[40px] bg-white rounded-full
                 absolute right-2 bottom-[-12px] grid place-items-center'>
                     <button onClick={clickHandler}>
                         {
